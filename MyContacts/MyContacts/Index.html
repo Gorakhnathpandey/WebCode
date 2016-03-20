@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="App/App.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Style.css" rel="stylesheet" />
+    <title>My Contacts</title>
+    <meta charset="utf-8" />
+</head>
+<body class="container" ng-app="myApp" ng-controller="myContactsController">
+    <div class="navbar-fixed-top headerbar">
+        <div class="container">
+            <span class="navbar-brand headertext">My Contacts</span>
+        </div>
+    </div>
+
+    <div class="row bodycontainer">
+        <div class="col-xs-4 colpad">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <input type="button" id="btnAdd" class="btn btn-default pull-right normalbutton" value="+ New" ng-click="addNew()" />
+                    </div>
+                    <div ng-repeat="contact in contacts">
+                        <div class="row job-details-row">
+                            <div class="col-xs-6">
+                                {{contact.firstName}} {{contact.lastName}}
+                            </div>
+                            <div class="col-xs-3 text-right ">
+                                <input type="button" id="btnAdd" class="btn btn-default pull-right gridbutton" value="Edit" ng-click="edit($index,contact)" />
+                            </div>
+                            <div class="col-xs-3 text-right">
+                                <input type="button" id="btnDelete" class="btn btn-default pull-right gridbutton" value="Delete" ng-click="delete($index)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-8 colpad">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <span class="navbar-brand">ADD OR EDIT CONTACT {{rowUnderEdit.firstName}} {{rowUnderEdit.lastName}}</span>
+                    </div>
+                    <hr />
+                    <div class="row ">
+                        <div class="col-xs-8">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <span>First Name</span>
+                                </div>
+                                <div class="col-xs-5">
+                                    <input type="text" name="fName" placeholder="Enter First Name" class="form-control" ng-model="rowUnderEdit.firstName" /><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <span>Last Name</span>
+                                </div>
+                                <div class="col-xs-5">
+                                    <input type="text" name="lName" placeholder="Enter Last Name" class="form-control" ng-model="rowUnderEdit.lastName"><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <span>Birth Day</span>
+                                </div>
+                                <div class="col-xs-5">
+                                    <input type="text" name="bDay" placeholder="DD/MM/YYYY" class="form-control" ng-model="rowUnderEdit.birthDay"><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <span>Company</span>
+                                </div>
+                                <div class="col-xs-5">
+                                    <input type="text" name="company" placeholder="Enter Company" class="form-control" ng-model="rowUnderEdit.Company"><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <span>Email Address</span>
+                                </div>
+                                <div class="col-xs-5">
+                                    <input type="text" name="emaliAddress" placeholder="example@domain.com" class="form-control" ng-model="rowUnderEdit.emailAddress"><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <span>Mobil Number</span>
+                                </div>
+                                <div class="col-xs-5">
+                                    <input type="text" name="mNumber" placeholder="000-000-0000" class="form-control" ng-model="rowUnderEdit.mobileNumer"><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="row">
+                                <img alt="No Preview" class="item profile-pic">
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-1">
+                                </div>
+                                <div class="col-xs-2">
+                                    <input type="button" class="btn btn-default normalbutton" ng-click="upload()" value="Upload Image" />
+                                    <input id="fileUpload" class="hidden" type="file" accept="image/*" onchange="angular.element(this).scope().uploadImage(this)" />
+                                </div>
+                                <div class="col-xs-5">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-10">
+        </div>
+        <div class="col-xs-1">
+            <input type="button" id="btnSave" class="btn btn-default normalbutton pull-right" value="Save" ng-click="save()" />
+        </div>
+        <div class="col-xs-1">
+            <input type="button" id="btnCancel" class="btn btn-default normalbutton pull-right" value="Cancel" ng-click="addNew()"/>
+        </div>
+    </div>
+
+    <div class="footer navbar-fixed-bottom footerbar footertext">Footer</div>
+</body>
+</html>

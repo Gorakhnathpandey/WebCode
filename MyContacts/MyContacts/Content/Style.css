@@ -1,0 +1,59 @@
+﻿body {
+}
+
+.headerbar {
+    min-height: 80px;
+    background-color: rgba(243, 107, 117, 1);
+}
+
+.headertext {
+    font-size: 30px;
+    color: white !important;
+    padding-top: 30px;
+}
+
+.footerbar {
+    min-height: 40px;
+    background-color: rgba(243, 107, 117, 1);
+}
+
+.footertext {
+    font-size: 30px;
+    color: white !important;
+    text-align: center;
+}
+
+.colpad {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.job-details-row {
+    line-height: 50px;
+    border-top: solid thin;
+    border-top-color: lightgray;
+}
+
+.normalbutton {
+    background-color: rgba(41, 125, 254, 1) !important;
+    width: auto !important;
+    margin: 0px 15px 12px 0px;
+    color: white !important;
+}
+
+.gridbutton {
+    width: auto !important;
+    margin-top: 8px;
+}
+
+.item {
+    border: 15px solid gray;
+    width: 200px;
+    height: 230px;
+    background-color: lightgray;
+    color: white !important;
+}
+
+.bodycontainer{
+    padding-top:100px
+}
